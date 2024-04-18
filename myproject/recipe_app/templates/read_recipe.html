@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block menu %}
+   {# {% include 'mainapp/includes/inc_header_menu.html' %}#}
+{% endblock menu %}
+
+{% block content %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">{{ recipe.title }}</h1>
+                <p>
+                    {#                {% include 'mainapp/includes/inc_main_menu.html' %}#}
+{#                    {% if user.is_authenticated %}#}
+{#                    <a class="btn btn-outline-success my-2" style="text-decoration: none;" href="{% url 'mainapp:update_recipe' recipe.id %}">Редактировать</a>#}
+{#                    <a class="btn btn-outline-danger my-2" style="text-decoration: none;" href="#">Удалить</a>#}
+{#                    {% endif %}#}
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+
+            {% if recipe.img %}
+                <img class="bd-placeholder-img " height="500" width="50%" SRC="{{ recipe.img.url }}"
+                     alt="Картинка">
+            {% else %}
+                <img class="bd-placeholder-img " height="500" width="50%"
+                     src="{% static 'img/567-120975-354x230.jpg' %}">
+            {% endif %}
+
+            </div><br>
+            <div class="col">
+{#                <h1 class="d-flex justify-content-center">{{ recipe.title }}</h1><br>#}
+                <h6>{{ recipe.description }}</h6>
+                <h5>Приготовление</h5>
+                {% for row_step in cooking_steps_list %}
+                    <p>{{ row_step }}</p>
+                {% endfor %}
+                <h6>Автор рецепта: {{ recipe.author }}</h6>
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+{% endblock content %}

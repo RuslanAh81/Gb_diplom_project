@@ -1,0 +1,16 @@
+{% extends  'base.html' %}
+
+{% block content %}
+<div class="box">
+    <h4 class="form-header">Enter</h4>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary btn-block">Enter</button>
+    </form>
+</div>
+{% endblock %}

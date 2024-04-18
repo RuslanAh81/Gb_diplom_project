@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+
+    <div class="full_recipe_card">
+        <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form_whole">
+                {% for field in user_form %}
+                <div class="form-group">
+                    {{field.label_tag}}
+                    <div>{{field}}</div>
+                    {% if field.errors%}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <p><input type="submit" value="Create my account"></p>
+            </div>
+
+        </form>
+</div>
+{% endblock %}

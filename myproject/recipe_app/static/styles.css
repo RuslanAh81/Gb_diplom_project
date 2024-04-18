@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.header {
+    height: 100px;
+    background-color: Tomato;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_link {
+    color: #faf7f7;
+}
+
+.title {
+    margin: 10px 0 10px calc((100% - 1530px) / 4);
+    color: rgb(145, 95, 2);
+}
+
+
+.more_link {
+    color: rgb(145, 95, 2);
+    font-size: 18px;
+}
+
+.recipes_block {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: calc((100% - 1560px) / 4);
+    margin-left: calc((100% - 1560px) / 4);
+}
+
+.recipe_card {
+    background-color: #fffbf6;
+    width: 520px;
+    padding: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    border: 1px solid Tomato;
+    border-radius: 5px;
+}
+
+.recipe_card:hover {
+    box-shadow: 5px 5px 5px 5px rgb(246, 227, 191);
+}
+
+.full_recipe_card {
+    padding: 20px 0 20px 0;
+    width: 920px;
+    margin-left: calc((100% - 920px) / 2);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.form_whole {
+    display: grid;
+    gap: 10px;
+}
+
+.form_group {
+    display: grid;
+    gap: 5px;
+}

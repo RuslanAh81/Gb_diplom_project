@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} {{ type }} {% endblock %}
+
+{% block content %}
+
+<h1 class="title"> {{type}} recipes</h1>
+
+<div class="recipes_block">
+    {% for recipe in recipes %}
+        <div class="recipe_card">
+            <h3>{{recipe.title}}</h3>
+            <a class="more_link" href="{% url 'full_recipe' recipe.pk %}"><img width="500" height="330" src="{{ MEDIA_URL }}{{recipe.image.url}}"  alt="фото блюда" /></a>
+            <p>-------------------------------------------------------------------------------------------</p>
+            <p>#{{recipe.pk}} {{recipe.description}} </p>
+
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

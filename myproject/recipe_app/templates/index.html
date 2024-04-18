@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Добро пожаловать на сайт рецептов</h1>
+                    <p>
+                        {{ title }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <h1>Привет</h1>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    {% for recipe in recipes  %}
+                                    {% if recipe.img %}
+                                        <a href="{% url 'recipe_app:read_rec' recipe.id %}">
+                                            {{ recipe.name }}
+                                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                             src="{{ recipe.img.url }}" alt="Курочка">
+        {#                               {% else %}                                                                 #}
+         {#                                  <img class="bd-placeholder-img card-img-top" width="100%" height="225" #}
+           {#                                     src="{% static 'img/567-120975-354x230.jpg' %}">                  #}
+                                            </a>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+{% endblock content %}
